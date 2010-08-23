@@ -1,0 +1,69 @@
+// Here is where you can define your constants for your application and to configure the blueprint framework.
+// Feel free to delete these if you want keep the defaults:
+
+$blueprint_grid_columns: 24;
+$blueprint_container_size: 920px;
+$blueprint_grid_margin: 10px;
+
+// Use this to calculate the width based on the total width.
+// Or you can set !blueprint_grid_width to a fixed value and unset !blueprint_container_size -- it will be calculated for you.
+$blueprint_grid_width: ($blueprint_container_size + $blueprint_grid_margin) / $blueprint_grid_columns - $blueprint_grid_margin;
+
+$bg_color: #01090c;
+$txt_color: #fefefe;
+$link_color: #b0ebd6;
+$hover_color: #99b0fc;
+$header_color: #eb3a10;
+$header_color: #e3f5ff;
+$menu_bg: #320101;
+$menu_link: #b0ebd6;
+$menu_hover: #06727b;
+$menu_active: #06727b;
+$sidebar_bg: $menu_bg;
+$drop_shadow_color: #222222;
+
+@mixin rounded_left_corners {
+  -webkit-border-top-left-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  border-top-left-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+@mixin rounded_right_corners {
+  -webkit-border-top-right-radius: 8px;
+  -moz-border-radius-topright: 8px;
+  border-top-right-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+@mixin rounded_top_corners {
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+@mixin rounded_bottom_corners {
+  -webkit-border-bottom-right-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -moz-border-radius-bottomleft: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+@mixin rounded_corners {
+  @include rounded_top_corners;
+  @include rounded_bottom_corners;
+}
+
+@mixin drop_shadow($offset: 2px) {
+  -moz-box-shadow: $offset 2px 2px $drop_shadow_color;
+  box-shadow: $offset 2px 2px $drop_shadow_color;
+  -webkit-box-shadow: $offset 2px 2px $drop_shadow_color; }

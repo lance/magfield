@@ -1,0 +1,6 @@
+- content_for :body_content_left do 
+  %ul#events
+    - @events.each do |event|
+      %li= link_to event.title, event_url(event) 
+
+= render :partial => "/shared/content_page"

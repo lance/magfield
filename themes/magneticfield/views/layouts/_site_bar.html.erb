@@ -1,0 +1,16 @@
+<% if refinery_user? %>
+  <div id='site_bar'>
+    <div id='site_bar_content' class='clearfix'>
+      <% unless login? %>
+        <div id='site_bar_branding'>
+          <%= link_to 'Logout', logout_url(:only_path => true), :id => "logout" %>
+        </div>
+      <% end %>
+      <% unless login? %>
+        <div id='editor_switch'>
+          <%= link_to 'Switch to Admin', '/refinery' -%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
