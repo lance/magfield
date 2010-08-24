@@ -1,3 +1,5 @@
+require 'eventbright'
+
 class EventsController < ApplicationController
 
   before_filter :find_all_events
@@ -6,6 +8,7 @@ class EventsController < ApplicationController
   def index
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
+    @events = event_bright_user.events
     present(@page)
   end
 
@@ -25,6 +28,10 @@ protected
 
   def find_page
     @page = Page.find_by_link_url("/events")
+  end
+  
+  def event_bright_user
+    @eb_user ||= EventBright::User.new(EVENT_BRIGHT_USER_KEY)
   end
 
 end

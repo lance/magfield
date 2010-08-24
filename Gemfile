@@ -56,3 +56,6 @@ gem 'refinerycms',    '= 0.9.7.12'
 gem "haml"
 gem "hassle"
 gem "compass", ">= 0.10.2"
+gem "eventbright", ">= 0.2.2"
+gem "tzinfo", ">= 0.3.22"
+gem "httparty", ">= 0.5.2"

@@ -1,6 +1,10 @@
 - content_for :body_content_left do 
   %ul#events
     - @events.each do |event|
-      %li= link_to event.title, event_url(event) 
+      %li.event
+        %span.title= event.title
+        - unless event.logo.blank?
+          %span.logo= image_tag event.logo
+        %span.description= truncate(strip_tags(event.description), :length=>600)
 
 = render :partial => "/shared/content_page"

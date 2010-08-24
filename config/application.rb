@@ -33,3 +33,4 @@ Sass::Plugin.add_template_location(
   Rails.root.join('themes/magneticfield/sass').to_s,
   Rails.root.join('themes/magneticfield/stylesheets').to_s
 )
+
