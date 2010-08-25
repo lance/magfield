@@ -2,7 +2,9 @@
   %ul#events
     - @events.each do |event|
       %li.event
-        %span.title= event.title
+        %span.title
+          = event.title
+          = format_event_date event.start_date
         - unless event.logo.blank?
           %span.logo= image_tag event.logo
         %span.description= truncate(strip_tags(event.description), :length=>600)
