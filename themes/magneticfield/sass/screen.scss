@@ -241,19 +241,20 @@ body.bp ul#events {
     margin: 0 0 20px 0;
     overflow: hidden;
     padding: 12px;
+    max-height: 130px;
     .logo, .description {
       float: left;
       display: inline;
     }
     .logo {
-      width: 200px;
+      width: 100px;
       img {
-        width: 200px;
+        width: 100px;
       }
     }
     .description {
       margin-left: 10px;
-      width: 390px;
+      width: 740px;
     }
     .title {
       font-size: 18px;
@@ -261,4 +262,15 @@ body.bp ul#events {
       margin-bottom: 10px;
     }
   }
+}
+
+body.bp #body_content_right {
+  h1 { font-size: 16px; }
+  h2 { font-size: 14px; }
+  h3 { font-size: 13px; }
+  h4 { font-size: 12px; }
+  h5 { font-size: 11px; }
+  h6 { font-size: 10px; }
+  h1,h2,h3,h4,h5,h6 { font-weight:bold; }
+  margin-bottom: 40px;
 }
