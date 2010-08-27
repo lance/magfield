@@ -2,13 +2,42 @@
 / 
   Event cache last updated:
   = Shovelpunks::Events.last_update
-%ul#events
-  - Shovelpunks::Events.upcoming.each do |event|
-    %li.event
-      %span.title
-        = event.title
-        = format_event_date event.start_date
-      - unless event.logo.blank?
-        %span.logo= image_tag event.logo
-      %span.description= truncate(strip_tags(event.description), :length=>600)
 
+#event_gallery
+  #events
+    - event = Shovelpunks::Events.upcoming.first
+    - unless event.blank?
+      .event.showing{:id=>"#{event.id}-info"}
+        .title{:style=>'margin-bottom:20px'}
+          = event.title
+          &rarr;
+          = format_event_date event.start_date
+          from now
+        .logo
+          = image_tag event.logo, :id=>"#{event.id}-logo"
+        .info
+          %span.description{:style=>'margin-left:30px'}= event.description
+    - Shovelpunks::Events.upcoming[1..10].each do |event|
+      .event.showing{:id=>"#{event.id}-info", :style=>'display:none'}
+        .title{:style=>'margin-bottom:20px'}
+          = event.title
+          &rarr;
+          = format_event_date event.start_date
+          from now
+        .logo
+          = image_tag event.logo, :id=>"#{event.id}-logo"
+        .info
+          %span.description{:style=>'margin-left:30px'}= event.description
+
+  #event_picker
+    = image_tag '/theme/images/comet-left.png', :class=>'picker-left'
+    - Shovelpunks::Events.upcoming[0..10].each do |event|
+      .event_icon
+        .info{:style=>'display:none', :id=>"#{event.id}-title"}
+          = event.title
+          %br
+          = format_event_date event.start_date
+          from now
+        .logo= image_tag event.logo, :id=>"#{event.id}-logo"
+    = image_tag '/theme/images/comet-right.png', :class=>'picker-right'
+      

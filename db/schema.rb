@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100823204329) do
+ActiveRecord::Schema.define(:version => 20100826160951) do
 
   create_table "events", :force => true do |t|
     t.string   "title"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(:version => 20100823204329) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "news_items", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "publish_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "news_items", ["id"], :name => "index_news_items_on_id"
 
   create_table "page_parts", :force => true do |t|
     t.integer  "page_id"
@@ -120,15 +130,6 @@ ActiveRecord::Schema.define(:version => 20100823204329) do
     t.integer "user_id"
     t.integer "role_id"
   end
-
-  create_table "schedules", :force => true do |t|
-    t.string   "provider"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "schedules", ["id"], :name => "index_schedules_on_id"
 
   create_table "slugs", :force => true do |t|
     t.string   "name"
