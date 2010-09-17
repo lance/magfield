@@ -12,7 +12,10 @@
           = event.title
           &rarr;
           = format_event_date event.start_date
-          from now
+        .tickets
+          &rarr;
+          = link_to "buy tickets", event.url, :target => '_mf_tickets'
+          &larr;
         .logo
           = image_tag event.logo, :id=>"#{event.id}-logo"
         .info
@@ -23,7 +26,10 @@
           = event.title
           &rarr;
           = format_event_date event.start_date
-          from now
+        .tickets
+          &rarr;
+          = link_to "buy tickets", event.url, :target => '_mf_tickets'
+          &larr;
         .logo
           = image_tag event.logo, :id=>"#{event.id}-logo"
         .info
@@ -37,7 +43,6 @@
           = event.title
           %br
           = format_event_date event.start_date
-          from now
         .logo= image_tag event.logo, :id=>"#{event.id}-logo"
     = image_tag '/theme/images/comet-right.png', :class=>'picker-right'
       

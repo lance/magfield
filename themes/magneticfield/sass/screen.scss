@@ -102,8 +102,12 @@ nav#menu {
   @include drop_shadow;
   position: relative;
   z-index: 20;
-  
-  div {
+
+  ul {
+    margin: 0;
+    padding: 0;  
+  }
+  ul li {
     list-style: none;
     font-size: 16px;
     display: inline-block;
@@ -116,21 +120,21 @@ nav#menu {
     a:hover {
       color: $menu_hover; }}
     
-  div:hover {
+  ul li:hover {
     color: $menu_hover; 
     background-color: $menu_link; } 
     
-  div.first {
+  ul li.first {
     @include rounded_left_corners;
   }
   
-  div.selected {
+  ul li.selected {
     color: $menu_hover; 
     background-color: $menu_link + 50;  }
-  div.selected a {
+  ul li.selected a {
     color: $menu_hover; }
     
-  div.last { 
+  ul li.last { 
     margin-right: 0;
     @include rounded_right_corners } }
 
@@ -228,6 +232,8 @@ body.bp p {
   width: 25%;
 }
 
+
+
 body.bp ul#events {
   margin: 0;
   padding: 0;
@@ -241,7 +247,6 @@ body.bp ul#events {
     margin: 0 0 20px 0;
     overflow: hidden;
     padding: 12px;
-    max-height: 130px;
     .logo, .description {
       float: left;
       display: inline;
@@ -254,12 +259,19 @@ body.bp ul#events {
     }
     .description {
       margin-left: 10px;
-      width: 740px;
+      width: 480px;
     }
     .title {
       font-size: 18px;
       display: block;
       margin-bottom: 10px;
+    }
+    .tickets {
+      float:right;
+      margin-top:-35px;
+      a {
+        text-decoration: none;
+      }
     }
   }
 }
@@ -273,6 +285,14 @@ body.bp #event_gallery {
     .event {
       .title {
         font-size: 24px;
+      }
+      .tickets {
+        float:right;
+        margin-top:-50px;
+        a {
+          font-size: 20px;
+          text-decoration: none;
+        }
       }
       .logo {
         clear:both;display:inline-block;float:left;

@@ -1,8 +1,31 @@
 module EventsHelper 
   include ActionView::Helpers::DateHelper
+  
   def format_event_date(date_string)
-    distance_of_time_in_words Time.now, date_string
+    now = Time.now
+    "#{distance_of_time_in_words now, date_string} #{now > Time.parse(date_string) ? 'ago' : 'from now'}"
   end
+  
+	def body_attributes
+    attributes = {:class => "#{body_classes.join(' ')}", :id => body_id}    
+    attributes
+  end
+  
+  def body_classes
+    @body_classes ||= [self.body_class]
+  end
+  
+  def add_body_class(clazz)
+    self.body_classes << clazz
+  end
+  
+  def body_class
+    @controller.controller_name.dasherize
+  end
+  
+  def body_id
+    @controller.controller_name.dasherize + '-' + @controller.action_name.dasherize
+  end  
   
 end
 

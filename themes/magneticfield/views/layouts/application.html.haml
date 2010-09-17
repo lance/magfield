@@ -31,7 +31,7 @@
   - if @meta.meta_keywords.present? 
     %meta{ :name=>:keywords, :content=>@meta.meta_keywords }
 
-  %body.bp
+  %body.bp{body_attributes}
     = render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/
     #container
       = render :partial => "/layouts/site_bar" if logged_in?
@@ -46,14 +46,14 @@
             = link_to image_tag('/theme/images/follow.png', :alt=>'Follow Us!'), '#', :id=>"tab", :onclick=>'animate_tab()'
             #social_icons.box
               = link_to image_tag('/theme/images/twitter.png', :alt=>'Follow us on Twitter'), "http://twitter.com/#{RefinerySetting.find_or_set(:twitter_id, false)}"
-              = link_to image_tag('/theme/images/facebook.png', :alt=>'Like us on Twitter'), "http://twitter.com/#{RefinerySetting.find_or_set(:facebook_page, false)}"
+              = link_to image_tag('/theme/images/facebook.png', :alt=>'Like us on Facebook'), "http://facebook.com/#{RefinerySetting.find_or_set(:facebook_page, false)}"
       #content 
         = yield
 
       #footer
         = link_to "Login", login_path
         \|
-        = link_to "About Us", '/pages/about-us'
+        = link_to "About Us", '/pages/about'
         \|
         = link_to "Contact", '/inquiries/new'        
         \|

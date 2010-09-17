@@ -4,9 +4,15 @@
       %li.event
         %span.title
           = event.title
+          &rarr;
           = format_event_date event.start_date
+        %span.tickets
+          &rarr;
+          = link_to "buy tickets", event.url, :target => '_mf_tickets'
+          &larr;
+        
         - unless event.logo.blank?
           %span.logo= image_tag event.logo
-        %span.description= truncate(strip_tags(event.description), :length=>600)
+        %span.description= truncate(strip_tags(event.description), :length=>400)
 
 = render :partial => "/shared/content_page"
