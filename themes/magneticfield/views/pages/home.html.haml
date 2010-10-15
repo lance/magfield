@@ -36,7 +36,6 @@
           %span.description{:style=>'margin-left:30px'}= event.description
 
   #event_picker
-    = image_tag '/theme/images/comet-left.png', :class=>'picker-left'
     - Shovelpunks::Events.upcoming[0..10].each do |event|
       .event_icon
         .info{:style=>'display:none', :id=>"#{event.id}-title"}
@@ -44,5 +43,4 @@
           %br
           = format_event_date event.start_date
         .logo= image_tag event.logo, :id=>"#{event.id}-logo"
-    = image_tag '/theme/images/comet-right.png', :class=>'picker-right'
       

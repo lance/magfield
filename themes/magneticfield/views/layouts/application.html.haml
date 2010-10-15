@@ -36,9 +36,6 @@
     #container
       = render :partial => "/layouts/site_bar" if logged_in?
       #header
-        #logo
-          = link_to image_tag('/theme/images/logo.png', :alt=>'The Magnetic Field'), '/', :title=>'The Magnetic Field : Home'
-        
         = render :partial => "/shared/menu"
       - if RefinerySetting.find_or_set(:show_social_media, false)
         #social_media
@@ -51,14 +48,11 @@
         = yield
 
       #footer
-        = link_to "Login", login_path
-        \|
-        = link_to "About Us", '/pages/about'
-        \|
-        = link_to "Contact", '/inquiries/new'        
-        \|
-        = link_to "Privacy Policy", '/pages/privacy-policy'        
-        = render :partial => "/shared/footer"
-    #top_bg &nbsp;
-    #bottom_bg &nbsp;
-    
+        #links
+          = link_to "Login", login_path
+          \|
+          = link_to "About Us", '/pages/about'
+          \|
+          = link_to "Contact", '/inquiries/new'        
+          \|
+          = link_to "Privacy Policy", '/pages/privacy-policy'        

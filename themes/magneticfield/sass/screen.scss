@@ -7,16 +7,19 @@
 
 body.bp {
   color: $txt_color;
+  background-color: $bg_color;
   a, a:visited {
     color: $link_color; }
   a:hover {
     color: $hover_color; }
   #header { 
     margin-top: 10px;
+    height: 205px;
     top: 0px;
     left: 0px;  }
   #container {
     @include container;
+    background: $bg_color url("/theme/images/bg.jpg") no-repeat left top;
     margin: auto;
     padding: 0 30px 10px;
     h1, h2, h3 {
@@ -31,35 +34,14 @@ body.bp {
     }
   #footer {
     clear: both;
-    padding: 20px;
+    padding: 20px 0;
+    #links {
+      padding: 10px 40px;
+      background: url(/theme/images/black50.png);
+      @include rounded_corners;
+    }    
     text-align: center; 
-    position: relative;
-    z-index: 60; } }
-
-body {
-  background: $bg_color url("/theme/images/bg.jpg") no-repeat left top; }
-
-#top_bg {
-  text-indent: -9999px;
-  background: url("/theme/images/top-bg.png");
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 500px;
-  width: 1000px;
-  z-index: 10;
-}
-
-#bottom_bg {
-  text-indent: -9999px;
-  background: url("/theme/images/bottom-bg.png") no-repeat right top;
-  position: absolute;
-  bottom: 0px;
-  right: 0px;
-  height: 410px;
-  width: 1000px;
-  z-index: 30;
-}
+    position: relative;} }
 
 #site_bar {
   background-color: #000;
@@ -68,7 +50,6 @@ body {
 }
 #site_bar_content {
   position: relative;
-  z-index: 50;
 }
 #site_bar_branding {
   float: right;
@@ -77,13 +58,10 @@ body {
 #logo {
   margin-top: 50px;
   position: relative;
-  z-index: 0;
 }
 
 #content {
-  margin-top: 20px; }
-
-#content {
+  margin-top: 20px;
   background: url("/theme/images/black50.png");
   min-height: 450px;
   padding: 10px;
@@ -94,15 +72,12 @@ body {
 
 nav#menu {
   float: right;
-  margin: 0;
+  margin: 60px 0 0 0;
   padding: 0;
-  margin-top: -60px;
   background: url("/theme/images/black50.png");
   @include rounded_corners;
   @include drop_shadow;
   position: relative;
-  z-index: 20;
-
   ul {
     margin: 0;
     padding: 0;  
@@ -118,11 +93,11 @@ nav#menu {
       display: block; 
       padding: 4px 8px; } 
     a:hover {
-      color: $menu_hover; }}
+       }}
     
   ul li:hover {
     color: $menu_hover; 
-    background-color: $menu_link; } 
+    background-color: black; } 
     
   ul li.first {
     @include rounded_left_corners;
@@ -140,7 +115,6 @@ nav#menu {
 
 #social_media {
   position: fixed;
-  z-index: 80;
   top: 40%;
   right: -140px;
   background-color: $bg_color;
@@ -166,10 +140,14 @@ nav#menu {
 body.bp #container #body_content_page_title {
   position: fixed;
   font-size: 16px;
-  bottom: 10px;
-  right: 20px;
-  z-index: 50;
-  color: #359;
+  bottom: 0;
+  right: 0px;
+  width: 100%;
+  padding: 8px;
+  background-color: white;
+  text-align: right;
+  color: #000;
+  margin-bottom: 0;
   font-weight: normal;
 }
 
@@ -179,7 +157,7 @@ body.bp #container #body_content_page_title:before {
   content: "you are here » ";
 }
 
-body.bp #content { position: relative; z-index: 60; }
+body.bp #content { position: relative; }
 
 body.bp #new_inquiry {
   margin: 20px 0;
@@ -189,25 +167,25 @@ body.bp #new_inquiry {
     margin-bottom: 10px;
     input[type=text], textarea {
       font-size: 16px;
-      background-color: #cde;
+      background-color: #ead19b;
       padding: 4px;
     }
     label {
       display: block;
       font-size: 14px;
-      color: #359;
+      color: $link_color;
     }
   }
   input[type=submit] {
     @include rounded_corners;
-    background-color: black;
-    color: #359;
+    background: url(/theme/images/black50.png);
+    color: $link_color;
     padding: 8px;
     font-size: 18px;
   }
   input[type=submit]:hover {
-    background-color: #359;
-    color: #000;
+    background-color: $link_color;
+    color: black;
     cursor: pointer;
   }
 }
@@ -225,8 +203,6 @@ body.bp p {
 #body_content_right {
   float: left;
   display: inline-block;
-  border: 1px solid #015;
-  background-color: #012;
   margin-left: 10px;
   padding: 10px;
   width: 25%;
@@ -240,8 +216,8 @@ body.bp ul#events {
   list-style: none;
   li {
     list-style: none;
-    background-color: #012;
-    border: 1px solid #015;
+    background: url(/theme/images/black50.png);
+    border: 1px solid #000;
     @include rounded_corners;
     @include drop_shadow;
     margin: 0 0 20px 0;
@@ -280,7 +256,6 @@ body.bp #event_gallery {
   width: 100%;
   #events {
     padding: 20px;
-    max-height: 500px;
     overflow: hidden;
     .event {
       .title {
@@ -296,24 +271,25 @@ body.bp #event_gallery {
       }
       .logo {
         clear:both;display:inline-block;float:left;
+        background: url(/theme/images/black50.png);
         width: 250px;
-        padding: 10px 4px;
-        border: 1px solid #015;
+        padding: 12px;
+        border: 1px solid $copy_bg;
+        @include rounded_corners;
         text-align: center;
         img {
           max-width: 250px;
         }
       }
       .info {
-        border: 1px solid #015;
         padding: 15px 30px;
         width: 500px;
         @include rounded_corners;
-        background-color: #012;
+        background: url(/theme/images/black50.png);
+        color: #ffffff;
         display:inline-block;
         float:right;
         margin-left:20px;
-        max-height: 380px;
         overflow: auto;
       }
     }
@@ -323,8 +299,8 @@ body.bp #event_gallery {
     margin: 40px auto;
     padding: 10px;
     text-align: center;
-    background-color: #012;
-    border: 1px solid #015;
+    @include rounded_corners;
+    background: url(/theme/images/black50.png);
     .event_icon {
       display: inline-block;
       height: 60px;
@@ -344,9 +320,10 @@ body.bp #event_gallery {
         top: -66px;
         margin-bottom: -56px;
         padding: 8px;
-        background-color: #012;
-        border: 2px solid #359;
-        color: $menu_link;
+        background: url(/theme/images/black50.png);
+        border: 2px solid #000;
+        color: $link_color;
+        letter-spacing: .3ex;
         @include rounded_corners;
         width: 200px;
       }
