@@ -329,7 +329,7 @@ body.bp .bottom {
 }
 /* line 8, ../../../../.rvm/gems/ree-1.8.7-2010.02@magfield/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_debug.scss */
 body.bp .showgrid {
-  background: url('/images/grid.png?1282782610');
+  background: url('/images/grid.png?1282838186');
 }
 /* line 4, ../../../../.rvm/gems/ree-1.8.7-2010.02@magfield/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body.bp .error {
@@ -663,8 +663,8 @@ body {
   border-bottom-left-radius: 8px;
 }
 
-/* line 79, ../sass/screen.scss */
-ul#menu {
+/* line 80, ../sass/screen.scss */
+#menu ul {
   float: right;
   margin: 0;
   padding: 0;
@@ -688,32 +688,32 @@ ul#menu {
   position: relative;
   z-index: 20;
 }
-/* line 90, ../sass/screen.scss */
-ul#menu li {
+/* line 91, ../sass/screen.scss */
+#menu ul li {
   list-style: none;
   font-size: 14px;
   display: inline-block;
   float: left;
   margin-right: 25px;
 }
-/* line 96, ../sass/screen.scss */
-ul#menu li a {
+/* line 97, ../sass/screen.scss */
+#menu ul li a {
   color: #b0ebd6;
   text-decoration: none;
   display: block;
   padding: 10px;
 }
-/* line 101, ../sass/screen.scss */
-ul#menu li a:hover {
+/* line 102, ../sass/screen.scss */
+#menu ul li a:hover {
   color: #06727b;
 }
-/* line 104, ../sass/screen.scss */
-ul#menu li:hover {
+/* line 105, ../sass/screen.scss */
+#menu ul li:hover {
   color: #06727b;
   background-color: #b0ebd6;
 }
-/* line 108, ../sass/screen.scss */
-ul#menu li.first {
+/* line 109, ../sass/screen.scss */
+#menu ul li.first {
   -webkit-border-top-left-radius: 8px;
   -moz-border-radius-topleft: 8px;
   border-top-left-radius: 8px;
@@ -721,8 +721,8 @@ ul#menu li.first {
   -moz-border-radius-bottomleft: 8px;
   border-bottom-left-radius: 8px;
 }
-/* line 112, ../sass/screen.scss */
-ul#menu li.last {
+/* line 113, ../sass/screen.scss */
+#menu ul li.last {
   margin-right: 0;
   -webkit-border-top-right-radius: 8px;
   -moz-border-radius-topright: 8px;
@@ -732,7 +732,7 @@ ul#menu li.last {
   border-bottom-right-radius: 8px;
 }
 
-/* line 116, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 #social_media {
   position: fixed;
   z-index: 50;
@@ -740,18 +740,18 @@ ul#menu li.last {
   right: -140px;
   background-color: #01090c;
 }
-/* line 122, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
 #social_media #follow {
   padding: 0;
   float: left;
 }
-/* line 125, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 #social_media #follow #tab {
   float: left;
   display: inline-block;
   margin-right: 7px;
 }
-/* line 129, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 #social_media #follow #social_icons {
   -webkit-border-top-left-radius: 8px;
   -moz-border-radius-topleft: 8px;
@@ -760,14 +760,14 @@ ul#menu li.last {
   -moz-border-radius-bottomleft: 8px;
   border-bottom-left-radius: 8px;
 }
-/* line 132, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 #social_media #follow .box {
   float: right;
   margin: 2px 70px 2px 0;
   padding: 0 5px 0 10px;
   background-color: #01090c;
 }
-/* line 137, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 #social_media #follow .box a {
   display: block;
   margin-bottom: 6px;

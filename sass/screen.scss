@@ -76,42 +76,45 @@ body {
 
 #site_bar { @include rounded_bottom_corners; }
 
-ul#menu {
-  float: right;
-  margin: 0;
-  padding: 0;
-  margin-top: -60px;
-  background: url("/theme/images/black50.png");
-  @include rounded_corners;
-  @include drop_shadow;
-  position: relative;
-  z-index: 20;
+#menu {
+  ul {
+    float: right;
+    margin: 0;
+    padding: 0;
+    margin-top: -60px;
+    background: url("/theme/images/black50.png");
+    @include rounded_corners;
+    @include drop_shadow;
+    position: relative;
+    z-index: 20;
   
-  li {
-    list-style: none;
-    font-size: 14px;
-    display: inline-block;
-    float: left;
-    margin-right: 25px;
-    a {
-      color: $menu_link; 
-      text-decoration: none; 
-      display: block; 
-      padding: 10px; } 
-    a:hover {
-      color: $menu_hover; }}
+    li {
+      list-style: none;
+      font-size: 14px;
+      display: inline-block;
+      float: left;
+      margin-right: 25px;
+      a {
+        color: $menu_link; 
+        text-decoration: none; 
+        display: block; 
+        padding: 10px; } 
+      a:hover {
+        color: $menu_hover; }}
     
-  li:hover {
-    color: $menu_hover; 
-    background-color: $menu_link; } 
+    li:hover {
+      color: $menu_hover; 
+      background-color: $menu_link; } 
     
-  li.first {
-    @include rounded_left_corners;
+    li.first {
+      @include rounded_left_corners;
+    }
+    
+    li.last { 
+      margin-right: 0;
+      @include rounded_right_corners } 
   }
-    
-  li.last { 
-    margin-right: 0;
-    @include rounded_right_corners } }
+}
 
 #social_media {
   position: fixed;

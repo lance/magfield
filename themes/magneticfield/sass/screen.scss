@@ -19,9 +19,10 @@ body.bp {
     left: 0px;  }
   #container {
     @include container;
+    width: 1120px;
     background: $bg_color url("/theme/images/bg.jpg") no-repeat left top;
     margin: auto;
-    padding: 0 30px 10px;
+    padding: 0 60px;
     h1, h2, h3 {
       color: $header_color; } }
     h1.page_title {
@@ -64,78 +65,64 @@ body.bp {
   margin-top: 20px;
   background: url("/theme/images/black50.png");
   min-height: 450px;
-  padding: 10px;
+  padding: 15px;
   @include rounded_corners;
   @include drop_shadow;  }
 
 #site_bar { @include rounded_bottom_corners; }
 
-nav#menu {
+#menu, #social_media {
   float: right;
   margin: 60px 0 0 0;
+  @include drop_shadow(5px);
+}
+#menu {
+  float: right;
+  margin-right: 15px;
   padding: 0;
-  background: url("/theme/images/black50.png");
-  @include rounded_corners;
-  @include drop_shadow;
   position: relative;
+  background: transparent url("/theme/images/nav.jpg") no-repeat top left;
+  font-face: Futura, Arial, Verdana, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  height: 138px;
+  width: 410px;
   ul {
-    margin: 0;
+    margin: 10px 0 0 30px;
     padding: 0;  
+    float: left;
   }
   ul li {
     list-style: none;
     font-size: 16px;
-    display: inline-block;
-    float: left;
+    display: block;
     a {
       color: $menu_link; 
       text-decoration: none; 
       display: block; 
-      padding: 4px 8px; } 
-    a:hover {
-       }}
-    
-  ul li:hover {
-    color: $menu_hover; 
-    background-color: black; } 
-    
-  ul li.first {
-    @include rounded_left_corners;
-  }
-  
-  ul li.selected {
-    color: $menu_hover; 
-    background-color: $menu_link + 50;  }
-  ul li.selected a {
-    color: $menu_hover; }
-    
-  ul li.last { 
-    margin-right: 0;
-    @include rounded_right_corners } }
+      padding: 0; } 
+  }    
+  ul li a:hover {
+    color: $menu_hover; }  
+}
 
 #social_media {
-  position: fixed;
-  top: 40%;
-  right: -140px;
-  background-color: $bg_color;
-  #follow {
-    padding: 0;
-    float: left;
-    #tab {
-      float: left;
-      display: inline-block;
-      margin-right: 7px; }
-    #social_icons {
-      @include rounded_left_corners;
-    }
-    .box {
-      float: right;
-      margin: 2px 70px 2px 0;
-      padding: 0 5px 0 10px;
-      background-color: $bg_color;
-      a {
-        display: block;
-        margin-bottom: 6px; } } } }
+  background: url('/theme/images/social_media.jpg') no-repeat top left;
+  width: 73px;
+  height: 139px;
+  float: right;
+  #facebook { 
+    margin-top: 18px;
+    margin-left: 10px;
+  }
+  #twitter {
+    margin-left: 12px;
+  }
+  #facebook img, #twitter img {
+    @include drop_shadow;    
+  }
+}
 
 body.bp #container #body_content_page_title {
   position: fixed;

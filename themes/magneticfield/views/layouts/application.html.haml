@@ -36,14 +36,32 @@
     #container
       = render :partial => "/layouts/site_bar" if logged_in?
       #header
-        = render :partial => "/shared/menu"
-      - if RefinerySetting.find_or_set(:show_social_media, false)
-        #social_media
-          #follow
-            = link_to image_tag('/theme/images/follow.png', :alt=>'Follow Us!'), '#', :id=>"tab", :onclick=>'animate_tab()'
-            #social_icons.box
-              = link_to image_tag('/theme/images/twitter.png', :alt=>'Follow us on Twitter'), "http://twitter.com/#{RefinerySetting.find_or_set(:twitter_id, false)}"
+        - if RefinerySetting.find_or_set(:show_social_media, false)
+          #social_media
+            #facebook
               = link_to image_tag('/theme/images/facebook.png', :alt=>'Like us on Facebook'), "http://facebook.com/#{RefinerySetting.find_or_set(:facebook_page, false)}"
+            #twitter
+              = link_to image_tag('/theme/images/twitter.png', :alt=>'Follow us on Twitter'), "http://twitter.com/#{RefinerySetting.find_or_set(:twitter_id, false)}"
+        #menu
+          %ul
+            %li 
+              %a{:href=>'/pages/cafe-bar'} Cafe &amp; Bar
+            %li 
+              %a{:href=>'/pages/performance-house'} Performance House
+            %li 
+              %a{:href=>'/pages/theatre'} The Magnetic Theatre
+            %li 
+              %a{:href=>'/events'} Tickets
+          %ul
+            %li 
+              %a{:href=>'/news'} News
+            %li 
+              %a{:href=>'/inquiries/new'} Contact
+            %li 
+              %a{:href=>'/pages/faq'} FAQ
+            %li 
+              %a{:href=>'/pages/about'} About
+          
       #content 
         = yield
 
