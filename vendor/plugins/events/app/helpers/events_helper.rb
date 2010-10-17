@@ -32,7 +32,7 @@ end
 module Shovelpunks
   module Events
     def self.upcoming
-      self.load_events if (@@event_cache.blank? || self.last_update < 30.minutes.ago)
+      self.load_events if (@@event_cache.blank? || (self.last_update < 30.minutes.ago))
       @@event_cache[:events]
     end
     
@@ -42,7 +42,7 @@ module Shovelpunks
     
     def self.load_events
       begin
-        @@event_cache = {:updated=>Time.now, :events=>EVENT_BRIGHT_USER.events[0..6]}      
+        @@event_cache = {:updated=>Time.now, :events=>EVENT_BRIGHT_USER.events[0..6].select {|e|DateTime.parse(e.start_date) > Time.now}}      
       rescue EventBright::Error => e
         puts "Cannot load events: #{e.message}"
       end

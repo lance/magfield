@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   def index
     # you can use meta fields from your model instead (e.g. browser_title)
     # by swapping @page for @event in the line below:
-    @events = event_bright_user.events
+    @events = Shovelpunks::Events.upcoming
     present(@page)
   end
 

@@ -20,20 +20,21 @@
           = image_tag event.logo, :id=>"#{event.id}-logo"
         .info
           %span.description{:style=>'margin-left:30px'}= event.description
-    - Shovelpunks::Events.upcoming[1..10].each do |event|
-      .event.showing{:id=>"#{event.id}-info", :style=>'display:none'}
-        .title{:style=>'margin-bottom:20px'}
-          = event.title
-          &rarr;
-          = format_event_date event.start_date
-        .tickets
-          &rarr;
-          = link_to "buy tickets", event.url, :target => '_mf_tickets'
-          &larr;
-        .logo
-          = image_tag event.logo, :id=>"#{event.id}-logo"
-        .info
-          %span.description{:style=>'margin-left:30px'}= event.description
+    - if Shovelpunks::Events.upcoming.size > 0
+      - Shovelpunks::Events.upcoming[1..10].each do |event|
+        .event.showing{:id=>"#{event.id}-info", :style=>'display:none'}
+          .title{:style=>'margin-bottom:20px'}
+            = event.title
+            &rarr;
+            = format_event_date event.start_date
+          .tickets
+            &rarr;
+            = link_to "buy tickets", event.url, :target => '_mf_tickets'
+            &larr;
+          .logo
+            = image_tag event.logo, :id=>"#{event.id}-logo"
+          .info
+            %span.description{:style=>'margin-left:30px'}= event.description
 
   #event_picker
     - Shovelpunks::Events.upcoming[0..10].each do |event|
