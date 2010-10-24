@@ -16,17 +16,16 @@ var animate_tab = function() {
 
 var observe_hover = function() {
   if ($('event_picker')) {
-    $$('#event_picker .event_icon .logo').each(function(elem) {
+    $$('#event_picker .event_icon .logo img').each(function(elem) {
       elem.observe('mouseover', function(e) {
-        info = $(Event.element(e).identify().gsub('logo','title'));
-        info.show();
+        Event.element(e).up().previous().show();
       });
       elem.observe('mouseout', function(e) {
-        info = $(Event.element(e).identify().gsub('logo','title'));
-        info.hide();
+        Event.element(e).up().previous().hide();
       });
       elem.observe('click', function(e) {
         // alert(Event.element(e).identify());
+        event.stop();
         info = $(Event.element(e).identify().gsub('logo','info'));
         current = $$("#events .showing").first();
 

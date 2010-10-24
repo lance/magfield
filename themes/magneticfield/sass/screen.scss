@@ -63,7 +63,7 @@ body.bp {
 
 #content {
   margin-top: 20px;
-  background: url("/theme/images/black50.png");
+  background: url("/theme/images/black70.png");
   min-height: 450px;
   padding: 15px;
   @include rounded_corners;
@@ -185,6 +185,7 @@ body.bp p {
   float: left;
   display: inline-block;
   width: 70%;
+  background: url('/themes/images/black70.png')
 }
 
 #body_content_right {
@@ -335,14 +336,29 @@ body.bp #body_content_right {
   margin-bottom: 40px;
 }
 
-body.bp article {
+body.bp .article {
   border-bottom: 1px solid white;
   margin-bottom: 40px;
+  padding: 0 0 20px 0;
+  background: url('/theme/images/black50.png');
+  @include drop_shadow;
+  @include rounded_bottom_corners;
+  border: 1px solid $border_color;
+  .article-body {
+    padding: 30px 10px 10px 10px;
+  }
+  p.article-pub-date {
+    display: inline-block;
+    float: right;
+    margin: 5px 5px 0 0;
+    padding: 0;
+    color: $link_color;
+  }
   h3 {
     padding: 10px;
-    background-color: #012;
-    border: 1px solid #015;
-    @include rounded_corners;
+    margin: 0;
+    font-size: 24px;
+    @include rounded_top_corners;
     a {
       color: $link_color + 50;
     }

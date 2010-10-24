@@ -24,6 +24,7 @@ $menu_hover: #320101;
 $menu_active: #06727b;
 $sidebar_bg: $menu_bg;
 $drop_shadow_color: #222222;
+$border_color: $drop_shadow_color;
 
 @mixin rounded_left_corners {
   -webkit-border-top-left-radius: 8px;

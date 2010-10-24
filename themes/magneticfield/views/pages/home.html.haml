@@ -43,5 +43,6 @@
           = event.title
           %br
           = format_event_date event.start_date
-        .logo= image_tag event.logo, :id=>"#{event.id}-logo"
+        .logo
+          = image_tag event.logo, :id=>"#{event.id}-logo"
       

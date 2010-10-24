@@ -1,14 +1,16 @@
 <% content_for :body_content_left do %>
-  <article class='full_post'>
+  <div class='article full_post'>
     <% content_for :body_content_title, "a<h1>#{@news_item.title}</h1>" %>
-    <p>
+    <p class='article-pub-date'>
       <small><%= t('.published') %> <%= l(@news_item.publish_date, :format => :long) %></small>
     </p>
-    <%= @news_item.body %>
-    <p>
-      <%= link_to t('.back_to_index'), news_items_url %>
-    </p>
-  </article>
+    <div class='article-body'>
+      <%= @news_item.body %>
+    </div>
+  </div>
+  <p>
+    <%= link_to t('.back_to_index'), news_items_url %>
+  </p>
 <% end %>
 <% content_for :body_content_right, render(:partial => 'recent_posts') %>
 
