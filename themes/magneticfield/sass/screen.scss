@@ -7,7 +7,7 @@
 
 body.bp {
   color: $txt_color;
-  background-color: $bg_color;
+  background: $bg_color url("/theme/images/textured-BG.jpg");
   a, a:visited {
     color: $link_color; }
   a:hover {
@@ -19,8 +19,8 @@ body.bp {
     left: 0px;  }
   #container {
     @include container;
+    background: url("/theme/images/logo1.png") no-repeat top left;
     width: 1120px;
-    background: $bg_color url("/theme/images/bg.jpg") no-repeat left top;
     margin: auto;
     padding: 0 60px;
     h1, h2, h3 {
@@ -136,6 +136,7 @@ body.bp #container #body_content_page_title {
   color: #000;
   margin-bottom: 0;
   font-weight: normal;
+  z-index: 500;
 }
 
 body.bp #container #body_content_page_title:before {
