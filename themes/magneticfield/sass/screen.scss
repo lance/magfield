@@ -17,9 +17,18 @@ body.bp {
     height: 205px;
     top: 0px;
     left: 0px;  }
+  #logo {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0;
+    z-index: 0;
+    background: url("/theme/images/rings.png") no-repeat -900px -1000px;  
+    position: fixed;
+    overflow: visible;
+  }
   #container {
     @include container;
-    background: url("/theme/images/logo1.png") no-repeat top left;
     width: 1120px;
     margin: auto;
     padding: 0 60px;
@@ -38,7 +47,7 @@ body.bp {
     padding: 20px 0;
     #links {
       padding: 10px 40px;
-      background: url(/theme/images/black50.png);
+      background: url(/theme/images/black70.png);
       @include rounded_corners;
     }    
     text-align: center; 
@@ -75,6 +84,8 @@ body.bp {
   float: right;
   margin: 60px 0 0 0;
   @include drop_shadow(5px);
+  position: relative;
+  z-index: 10;
 }
 #menu {
   float: right;
@@ -182,11 +193,16 @@ body.bp p {
   font-size: 14px;
 }
 
+#pages-home #body_content_left p {
+  font-size: 28px;
+  font-family: Baskerville, Times New Roman, Times, serif;
+}
+
 #body_content_left {
   float: left;
   display: inline-block;
   width: 70%;
-  background: url('/themes/images/black70.png')
+  background: url('/themes/images/black70.png');
 }
 
 #body_content_right {
@@ -194,10 +210,18 @@ body.bp p {
   display: inline-block;
   margin-left: 10px;
   padding: 10px;
-  width: 25%;
+  width: 290px;
+  background-color: #000;
 }
 
+#body_content_left {
+  width: 740px;
+  margin-right: 20px;
+}
 
+#body_content.no_body_content_right #body_content_left {
+  width: 1000px;
+}
 
 body.bp ul#events {
   margin: 0;
@@ -205,7 +229,7 @@ body.bp ul#events {
   list-style: none;
   li {
     list-style: none;
-    background: url(/theme/images/black50.png);
+    background: url(/theme/images/black70.png);
     border: 1px solid #000;
     @include rounded_corners;
     @include drop_shadow;
@@ -260,7 +284,7 @@ body.bp #event_gallery {
       }
       .logo {
         clear:both;display:inline-block;float:left;
-        background: url(/theme/images/black50.png);
+        background-color: #000;
         width: 250px;
         padding: 12px;
         border: 1px solid $copy_bg;
@@ -274,7 +298,7 @@ body.bp #event_gallery {
         padding: 15px 30px;
         width: 680px;
         @include rounded_corners;
-        background: url(/theme/images/black50.png);
+        background-color: #000;
         color: #ffffff;
         display:inline-block;
         float:right;
@@ -289,7 +313,7 @@ body.bp #event_gallery {
     padding: 10px;
     text-align: center;
     @include rounded_corners;
-    background: url(/theme/images/black50.png);
+    background-color: #000;
     .event_icon {
       display: inline-block;
       height: 60px;
@@ -309,7 +333,7 @@ body.bp #event_gallery {
         top: -66px;
         margin-bottom: -56px;
         padding: 8px;
-        background: url(/theme/images/black50.png);
+        background: url(/theme/images/black70.png);
         border: 2px solid #000;
         color: $link_color;
         letter-spacing: .3ex;
@@ -341,7 +365,7 @@ body.bp .article {
   border-bottom: 1px solid white;
   margin-bottom: 40px;
   padding: 0 0 20px 0;
-  background: url('/theme/images/black50.png');
+  background: url('/theme/images/black70.png');
   @include drop_shadow;
   @include rounded_bottom_corners;
   border: 1px solid $border_color;
