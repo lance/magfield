@@ -17,13 +17,16 @@ body.bp {
     height: 205px;
     top: 0px;
     left: 0px;  }
+  #outer_container {
+    width: 100%;
+  }
   #logo {
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: relative;
     margin: 0;
     z-index: 0;
-    background: url("/theme/images/rings.png") no-repeat -900px -1000px;  
+    background: url("/theme/images/rings.png") no-repeat 0px -40px;  
     position: fixed;
     overflow: visible;
   }
