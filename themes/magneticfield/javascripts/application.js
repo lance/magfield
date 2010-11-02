@@ -25,7 +25,6 @@ var observe_hover = function() {
       });
       elem.observe('click', function(e) {
         // alert(Event.element(e).identify());
-        event.stop();
         info = $(Event.element(e).identify().gsub('logo','info'));
         current = $$("#events .showing").first();
 

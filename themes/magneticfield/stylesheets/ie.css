@@ -87,3 +87,13 @@ body.bp button {
   position: relative;
   top: 0.25em;
 }
+
+/* line 18, ../sass/ie.scss */
+#logo, #container {
+  text-align: left;
+}
+
+/* line 20, ../sass/ie.scss */
+#logo {
+  margin-left: -40px;
+}

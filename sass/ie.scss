@@ -13,4 +13,9 @@ body.bp {
   // Example:
   // .my-container
   //   text-align: left
+  #logo, #container { text-align: left; }
+}
+
+#logo {
+  margin-left: -40px;
 }
