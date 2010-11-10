@@ -329,7 +329,7 @@ body.bp .bottom {
 }
 /* line 8, ../../../../../../.rvm/gems/ree-1.8.7-2010.02@magfield/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_debug.scss */
 body.bp .showgrid {
-  background: url('/images/grid.png?1282838186');
+  background: url('/images/grid.png?1282782610');
 }
 /* line 4, ../../../../../../.rvm/gems/ree-1.8.7-2010.02@magfield/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body.bp .error {
@@ -582,7 +582,7 @@ body.bp #container {
   margin: 0 auto;
   overflow: hidden;
   *zoom: 1;
-  width: 1120px;
+  width: 1020px;
   margin: auto;
   padding: 0 60px;
 }
@@ -859,7 +859,7 @@ body.bp p {
 
 /* line 197, ../sass/screen.scss */
 #pages-home #body_content_left p {
-  font-size: 28px;
+  font-size: 20px;
   font-family: Baskerville, Times New Roman, Times, serif;
 }
 
@@ -962,7 +962,7 @@ body.bp #event_gallery {
 }
 /* line 271, ../sass/screen.scss */
 body.bp #event_gallery #events {
-  padding: 20px;
+  padding: 0px;
   overflow: hidden;
 }
 /* line 275, ../sass/screen.scss */
@@ -1008,8 +1008,8 @@ body.bp #event_gallery #events .event .logo img {
 }
 /* line 298, ../sass/screen.scss */
 body.bp #event_gallery #events .event .info {
-  padding: 15px 30px;
-  width: 680px;
+  padding: 10px 15px;
+  width: 640px;
   -webkit-border-top-left-radius: 8px;
   -webkit-border-top-right-radius: 8px;
   -moz-border-radius-topleft: 8px;

@@ -30,7 +30,7 @@ body.bp {
   }
   #container {
     @include container;
-    width: 1120px;
+    width: 1020px;
     margin: auto;
     padding: 0 60px;
     h1, h2, h3 {
@@ -195,7 +195,7 @@ body.bp p {
 }
 
 #pages-home #body_content_left p {
-  font-size: 28px;
+  font-size: 20px;
   font-family: Baskerville, Times New Roman, Times, serif;
 }
 
@@ -269,7 +269,7 @@ body.bp ul#events {
 body.bp #event_gallery {
   width: 100%;
   #events {
-    padding: 20px;
+    padding: 0px;
     overflow: hidden;
     .event {
       .title {
@@ -296,8 +296,8 @@ body.bp #event_gallery {
         }
       }
       .info {
-        padding: 15px 30px;
-        width: 680px;
+        padding: 10px 15px;
+        width: 640px;
         @include rounded_corners;
         background-color: #000;
         color: #ffffff;
