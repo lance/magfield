@@ -329,7 +329,7 @@ body.bp .bottom {
 }
 /* line 8, ../../../../../../.rvm/gems/ree-1.8.7-2010.02@magfield/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_debug.scss */
 body.bp .showgrid {
-  background: url('/images/grid.png?1282782610');
+  background: url('/images/grid.png?1282838186');
 }
 /* line 4, ../../../../../../.rvm/gems/ree-1.8.7-2010.02@magfield/gems/compass-0.10.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body.bp .error {
@@ -1159,8 +1159,8 @@ body.bp .article .article-body {
 body.bp .article p.article-pub-date {
   display: inline-block;
   float: right;
-  margin: 5px 5px 0 0;
-  padding: 0;
+  margin: 5px 15px 0 0;
+  padding: 0 10px 0 0;
   color: #fee4a9;
 }
 /* line 385, ../sass/screen.scss */

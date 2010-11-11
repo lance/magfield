@@ -2,7 +2,7 @@
   <div class='article full_post'>
     <% content_for :body_content_title, "a<h1>#{@news_item.title}</h1>" %>
     <p class='article-pub-date'>
-      <small><%= t('.published') %> <%= l(@news_item.publish_date, :format => :long) %></small>
+      <small><%= t('.published') %> <%= l(@news_item.publish_date, :format => :short) %></small>
     </p>
     <div class='article-body'>
       <%= @news_item.body %>

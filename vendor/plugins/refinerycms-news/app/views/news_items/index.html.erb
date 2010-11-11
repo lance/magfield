@@ -2,11 +2,21 @@
   <%= @page[:body] if @news_items.offset == 0 %>
 
   <% if @news_items.any? %>
+    <% news_item = @news_items.shift %>
+    <div class='article full_post'>
+      <% content_for :body_content_title, "a<h1>#{news_item.title}</h1>" %>
+      <p class='article-pub-date'>
+        <small><%= t('.published') %> <%= l(news_item.publish_date, :format => :short) %></small>
+      </p>
+      <div class='article-body'>
+        <%= news_item.body %>
+      </div>
+    </div>
     <% @news_items.each do |item| %>
       <div class='article'>
         <h3><%= link_to item.title, news_item_url(item) %></h3>
         <p class='article-pub-date'>
-          <small><%= t('.published') %> <%= l(item.publish_date) %></small>
+          <small><%= t('.published') %> <%= l(item.publish_date, :format => :short) %></small>
         </p>
         <div class='article-body'>
           <%= truncate  item.body, :length => 200,
