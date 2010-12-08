@@ -42,7 +42,7 @@ module Shovelpunks
     
     def self.load_events
       begin
-        @@event_cache = {:updated=>Time.now, :events=>EventBright::User.new(EVENT_BRIGHT_USER_KEY).events[0..6].select {|e|DateTime.parse(e.start_date) > Time.now}}      
+        @@event_cache = {:updated=>Time.now, :events=>EventBright::User.new(EVENT_BRIGHT_USER_KEY).events[0..6].select {|e|DateTime.parse(e.end_date) > Time.now}}      
       rescue EventBright::Error => e
         puts "Cannot load events: #{e.message}"
       end
