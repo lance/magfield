@@ -2,6 +2,8 @@
 / 
   Event cache last updated:
   = Shovelpunks::Events.last_update
+  Events
+  = Shovelpunks::Events.upcoming
 
 #event_gallery
   #events
@@ -11,7 +13,7 @@
         .title{:style=>'margin-bottom:20px'}
           = event.title
           &rarr;
-          = format_event_date event.start_date
+          = format_event_date event
         .tickets
           &rarr;
           = link_to "buy tickets", event.url, :target => '_mf_tickets'
@@ -26,7 +28,7 @@
           .title{:style=>'margin-bottom:20px'}
             = event.title
             &rarr;
-            = format_event_date event.start_date
+            = format_event_date event
           .tickets
             &rarr;
             = link_to "buy tickets", event.url, :target => '_mf_tickets'
@@ -42,7 +44,7 @@
         .info{:style=>'display:none', :id=>"#{event.id}-title"}
           = event.title
           %br
-          = format_event_date event.start_date
+          = format_event_date event
         .logo
           = image_tag event.logo, :id=>"#{event.id}-logo"
       

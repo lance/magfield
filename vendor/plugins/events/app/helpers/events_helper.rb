@@ -1,9 +1,16 @@
 module EventsHelper 
   include ActionView::Helpers::DateHelper
   
-  def format_event_date(date_string)
+  def format_event_date(event)
     now = Time.now
-    "#{distance_of_time_in_words now, date_string} #{now > Time.parse(date_string) ? 'ago' : 'from now'}"
+    start_date = Time.parse(event.start_date)
+    end_date = event.end_date.nil? ? nil : Time.parse(event.end_date)
+
+    if (start_date <= now && end_date)
+      "continuing for #{distance_of_time_in_words(now, end_date)}"
+    else
+      "#{distance_of_time_in_words now, event.start_date} #{now > Time.parse(event.start_date) ? 'ago' : 'from now'}"
+    end
   end
   
 	def body_attributes
