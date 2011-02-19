@@ -1,7 +1,7 @@
 - content_for :body_content_left do 
   %ul#events
     - @events.each do |event|
-      %li.event
+      %li{:class=>"event #{cycle('even', 'odd')}"}
         %span.title
           = event.title
           &rarr;
@@ -10,9 +10,11 @@
           &rarr;
           = link_to "buy tickets", event.url, :target => '_mf_tickets'
           &larr;
+        .more{:style=>'display:none'}
+          - unless event.logo.blank?
+            %span.logo= image_tag event.logo
+          %span.description= simple_format(auto_link(strip_tags(event.description)))
+
         
-        - unless event.logo.blank?
-          %span.logo= image_tag event.logo
-        %span.description= truncate(strip_tags(event.description), :length=>400)
 
 = render :partial => "/shared/content_page"

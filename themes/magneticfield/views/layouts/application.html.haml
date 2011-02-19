@@ -32,12 +32,12 @@
     %meta{ :name=>:keywords, :content=>@meta.meta_keywords }
 
   %body.bp{body_attributes}
-    #logo
-      =link_to image_tag('/theme/images/logo1.png'), '/'
     = render :partial => "/shared/ie6check" if request.env['HTTP_USER_AGENT'] =~ /MSIE/
     #container
       = render :partial => "/layouts/site_bar" if logged_in?
       #header
+        #logo
+          =link_to image_tag('/theme/images/logo1.png'), '/'
         - if RefinerySetting.find_or_set(:show_social_media, false)
           #social_media
             #facebook
@@ -54,7 +54,7 @@
               %a{:href=>'/pages/the-magnetic-theatre'} The Magnetic Theatre
             %li 
               %a{:href=>'/events'} Tickets
-          %ul
+          %ul.last
             %li 
               %a{:href=>'/news'} News
             %li 

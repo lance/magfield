@@ -2,12 +2,11 @@
 / 
   Event cache last updated:
   = Shovelpunks::Events.last_update
-  Events
-  = Shovelpunks::Events.upcoming
 
 #event_gallery
   #events
-    - event = Shovelpunks::Events.upcoming.first
+    - events = Shovelpunks::Events.upcoming
+    - event = events.blank? ? nil : events.first
     - unless event.blank?
       .event.showing{:id=>"#{event.id}-info"}
         .title{:style=>'margin-bottom:20px'}
@@ -18,33 +17,8 @@
           &rarr;
           = link_to "buy tickets", event.url, :target => '_mf_tickets'
           &larr;
-        .logo
-          = image_tag event.logo, :id=>"#{event.id}-logo"
-        .info
-          %span.description{:style=>'margin-left:30px'}= event.description
-    - if Shovelpunks::Events.upcoming.size > 0
-      - Shovelpunks::Events.upcoming[1..10].each do |event|
-        .event.showing{:id=>"#{event.id}-info", :style=>'display:none'}
-          .title{:style=>'margin-bottom:20px'}
-            = event.title
-            &rarr;
-            = format_event_date event
-          .tickets
-            &rarr;
-            = link_to "buy tickets", event.url, :target => '_mf_tickets'
-            &larr;
+        - unless event.logo.blank?
           .logo
             = image_tag event.logo, :id=>"#{event.id}-logo"
-          .info
-            %span.description{:style=>'margin-left:30px'}= event.description
-
-  #event_picker
-    - Shovelpunks::Events.upcoming[0..10].each do |event|
-      .event_icon
-        .info{:style=>'display:none', :id=>"#{event.id}-title"}
-          = event.title
-          %br
-          = format_event_date event
-        .logo
-          = image_tag event.logo, :id=>"#{event.id}-logo"
-      
+        .info
+          %span.description{:style=>'margin-left:30px'}= event.description

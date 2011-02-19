@@ -41,4 +41,17 @@ var observe_hover = function() {
   }
 }
 
+var observe_listings = function() {
+  if ($('events')) {
+    $$('#events .event .title').each(function(elem) {
+        elem.observe('click', function(e) {
+          var element = Event.element(e);
+          // $(element).next('.more').toggle();
+          Effect.toggle($(element).next('.more'), 'blind', { delay: 0.5 });
+          });
+        });
+  }
+}
+
 document.observe('dom:loaded', observe_hover);
+document.observe('dom:loaded', observe_listings);

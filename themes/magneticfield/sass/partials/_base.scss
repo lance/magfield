@@ -9,18 +9,18 @@ $blueprint_grid_margin: 10px;
 // Or you can set !blueprint_grid_width to a fixed value and unset !blueprint_container_size -- it will be calculated for you.
 $blueprint_grid_width: ($blueprint_container_size + $blueprint_grid_margin) / $blueprint_grid_columns - $blueprint_grid_margin;
 
-$bg_color: #a17c34;
+$bg_color: #333;
 //background-color: $menu_hover;
 //$bg_color: #01090c;
 $txt_color: #fefefe;
-$link_color: #fee4a9;
-$hover_color: #ffffff;
+$link_color: #b4d9fc;
+$hover_color: #c3e6f8;
 // $header_color: #a17c34;
-$header_color: #fee4a9 + 30;
-$copy_bg: #775725;
+$header_color: #c3e6f8;
+$copy_bg: #222;
 $menu_bg: #320101;
 $menu_link: #ffffff;
-$menu_hover: #320101;
+$menu_hover: #b4d9fc;
 $menu_active: #06727b;
 $sidebar_bg: $menu_bg;
 $drop_shadow_color: #222222;

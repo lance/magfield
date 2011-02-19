@@ -1,15 +1,18 @@
 module EventsHelper 
   include ActionView::Helpers::DateHelper
-  
+
   def format_event_date(event)
-    now = Time.now
     start_date = Time.parse(event.start_date)
     end_date = event.end_date.nil? ? nil : Time.parse(event.end_date)
 
-    if (start_date <= now && end_date)
-      "continuing for #{distance_of_time_in_words(now, end_date)}"
+    if start_date.today?
+      return "Today at #{start_date.strftime('%I:%M %p')}"
+    end
+
+    if (start_date <= time_now && end_date)
+      "now through #{end_date}"
     else
-      "#{distance_of_time_in_words now, event.start_date} #{now > Time.parse(event.start_date) ? 'ago' : 'from now'}"
+      start_date.strftime('%B %d at %I:%M %p')
     end
   end
   
@@ -36,9 +39,18 @@ module EventsHelper
   
 end
 
+def time_now
+  Time.now + 18000 # Account for UTC on purplecat servers
+end
+  
+
 module Shovelpunks
   module Events
     def self.upcoming
+      self.load_events if (@@event_cache.blank? || (self.last_update < 5.minutes.ago))
+    end
+
+    def self.listings
       self.load_events if (@@event_cache.blank? || (self.last_update < 5.minutes.ago))
       @@event_cache[:events]
     end
@@ -49,7 +61,7 @@ module Shovelpunks
     
     def self.load_events
       begin
-        @@event_cache = {:updated=>Time.now, :events=>EventBright::User.new(EVENT_BRIGHT_USER_KEY).events[0..6].select {|e|DateTime.parse(e.end_date) > Time.now}}      
+        @@event_cache = {:updated=>time_now, :events=>EventBright::User.new(EVENT_BRIGHT_USER_KEY).events.select {|e|DateTime.parse(e.end_date) > Date.today}}      
       rescue EventBright::Error => e
         puts "Cannot load events: #{e.message}"
       end
