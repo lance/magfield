@@ -1,24 +1,17 @@
+- content_for :body_content_right do
+  %h3 Upcoming Shows
+  %ul.sidebar_events
+    - Shovelpunks::Events.upcoming.each do |event|
+      %li
+        %a{:href=>"##{event.id}", :rel=>'facebox'} 
+          %b= event.title
+          &raquo;
+          = short_date event
+        %span.description{:id=>event.id, :style=>'display:none'}
+          = event.description
+          %a{:href=>event.url, :title=>"Tickets for #{event.title}"} Buy Tix &rarr;
+
+    
+
 = render :partial => "/shared/content_page", :locals => {:show_submenu => false} 
 / 
-  Event cache last updated:
-  = Shovelpunks::Events.last_update
-
-#event_gallery
-  #events
-    - events = Shovelpunks::Events.upcoming
-    - event = events.blank? ? nil : events.first
-    - unless event.blank?
-      .event.showing{:id=>"#{event.id}-info"}
-        .title{:style=>'margin-bottom:20px'}
-          = event.title
-          &rarr;
-          = format_event_date event
-        .tickets
-          &rarr;
-          = link_to "buy tickets", event.url, :target => '_mf_tickets'
-          &larr;
-        - unless event.logo.blank?
-          .logo
-            = image_tag event.logo, :id=>"#{event.id}-logo"
-        .info
-          %span.description{:style=>'margin-left:30px'}= event.description

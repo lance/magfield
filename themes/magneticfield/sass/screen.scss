@@ -13,9 +13,17 @@ body.bp {
     color: $link_color; }
   a:hover {
     color: $hover_color; }
+  h1 { font-size: 22px; }
+  h2 { font-size: 18px; }
+  h3 { font-size: 16px; }
+  h1, h2, h3 { 
+    text-shadow: #500 1px 1px 1px;
+  }
   #header { 
     margin: 10px 0;
-    height: 240px;
+    height: 120px;
+    position: relative;
+    z-index:100;
     top: 0px;
     left: 0px;  }
   #logo {
@@ -24,7 +32,7 @@ body.bp {
   }
   #container {
     @include container;
-    width: 1020px;
+    width: 920px;
     margin: auto;
     padding: 0 60px;
     h1, h2, h3 {
@@ -42,7 +50,8 @@ body.bp {
     padding: 20px 0;
     #links {
       padding: 10px 40px;
-      background: url(/theme/images/black70.png);
+      color: #000;
+      background: #ccc; // url(/theme/images/black50.png);
       @include rounded_corners;
     }    
     text-align: center; 
@@ -67,7 +76,7 @@ body.bp {
 
 #content {
   margin-top: 20px;
-  background: url("/theme/images/black70.png");
+  background: #eee; // url("/theme/images/black50.png");
   min-height: 450px;
   padding: 15px;
   @include rounded_corners;
@@ -85,8 +94,8 @@ body.bp {
 #menu {
   @include rounded_corners;
   float: right;
-  padding: 20px 30px;
-  background: #000;
+  padding: 10px 20px;
+  background: #333;
   font-face: Futura, Arial, Verdana, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
@@ -110,40 +119,34 @@ body.bp {
 }
 
 #social_media {
-  width: 73px;
-  height: 139px;
+  width: 120px;
+  height: 19px;
   float: right;
-  #facebook { 
-    margin-top: 18px;
-    margin-left: 10px;
-  }
-  #twitter {
-    margin-left: 12px;
+  #facebook, #twitter {
+    margin: 4px 10px 4px 4px;
+    float: right;
+    display: inline-block;
   }
   #facebook img, #twitter img {
     @include drop_shadow;    
   }
 }
 
-body.bp #container #body_content_page_title {
-  position: fixed;
-  font-size: 16px;
-  bottom: 0;
-  right: 0px;
-  width: 100%;
-  padding: 8px;
-  background-color: white;
-  text-align: right;
-  color: #000;
-  margin-bottom: 0;
-  font-weight: normal;
-  z-index: 500;
+body.bp #body_content {
+  display: inline-block;
 }
 
-body.bp #container #body_content_page_title:before {
-  font-size: 12px;
-  font-style: italic;
-  content: "you are here » ";
+body.bp #container #body_content_page_title {
+  position: fixed;
+  top: 0;
+  right: 0px;
+  padding: 8px;
+  text-align: right;
+  color: #666;
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 14px;
+  display:none;
 }
 
 body.bp #content { position: relative; }
@@ -163,7 +166,7 @@ body.bp #new_inquiry {
     label {
       display: block;
       font-size: 14px;
-      color: $link_color;
+      color: $label_color;
     }
   }
   input[type=submit] {
@@ -185,10 +188,13 @@ body.bp p {
 }
 
 #pages-home #body_content_left p {
-  font-size: 16px;
-  text-shadow: #000 1px 1px 1px;
+  font-size: 14px;
+  color: #000;
   font-family: "Sansation", "Lucida Grande", "Verdana", "Arial", "Helvetica", "Gill Sans", sans-serif;
-  background: url('/themes/images/black70.png');
+  img {
+    float: left;
+    margin-right: 15px;
+  }
 }
 
 #body_content_left {
@@ -202,23 +208,26 @@ body.bp p {
   display: inline-block;
   margin-left: 10px;
   padding: 10px;
-  width: 200px;
-  background-color: #000;
+  width: 180px;
+  background-color: #333;
+  color: #eee;
+  @include rounded_corners;
 }
 
 #body_content_left {
-  width: 740px;
+  width: 640px;
   margin-right: 20px;
 }
 
 #body_content.no_body_content_right #body_content_left {
-  width: 1000px;
+  width: 900px;
 }
 
 body.bp ul#events {
   margin: 0;
   padding: 0;
   list-style: none;
+  color: #eee;
   li {
     list-style: none;
     border: 1px solid #000;
@@ -241,19 +250,24 @@ body.bp ul#events {
       width: 480px;
     }
     .title {
-      font-size: 18px;
+      font-size: 14px;
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 4px;
       cursor: pointer;
     }
     .title:hover {
-      color: #B4D9FC;
+      color: #aaa;
+    }
+    .more {
+      border-top: #999 1px dotted;
+      padding-top: 10px;
+      margin-top: 4px;
     }
     .tickets {
       float:right;
-      margin-top:-35px;
+      margin-top:-20px;
       margin-right: 20px;
-      font-size: 14px;
+      font-size: 12px;
       a {
         text-decoration: none;
       }
@@ -386,6 +400,22 @@ body.bp .article {
     @include rounded_top_corners;
     a {
       color: $link_color + 50;
+    }
+  }
+}
+
+body.bp {
+  ul.sidebar_events {
+    margin: 0;
+    padding: 0;
+    list-stlye: none;
+    li {
+      list-style: none;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: #ccc 1px dotted;
+      line-height: 14px;
+      a { color: white; text-decoration: none; }
     }
   }
 }

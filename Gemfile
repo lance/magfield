@@ -1,4 +1,5 @@
 source :rubygems
+source 'http://rubygems.torquebox.org'
 
 # Specify the database driver as appropriate for your application (only one is necessary).
 # Defaults to sqlite3. Don't remove any of these below in the core or gems won't install.
@@ -59,3 +60,14 @@ gem "compass", ">= 0.10.2"
 gem "eventbright", ">= 0.2.2"
 gem "tzinfo", ">= 0.3.22"
 gem "httparty", ">= 0.5.2"
+
+group :torquebox do
+#  gem 'jruby-openssl'
+#  gem 'org.torquebox.rake-support', '1.0.0.CR1'
+#  gem 'org.torquebox.container-foundation', '1.0.0.CR1'
+#  gem 'org.torquebox.messaging-client', '1.0.0.CR1'
+#  gem 'org.torquebox.messaging-container', '1.0.0.CR1'
+#  gem 'org.torquebox.naming-client', '1.0.0.CR1'
+#  gem 'org.torquebox.naming-container', '1.0.0.CR1'
+#  gem 'org.torquebox.vfs', '1.0.0.CR1'
+end  

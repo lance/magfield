@@ -15,6 +15,11 @@ module EventsHelper
       start_date.strftime('%B %d at %I:%M %p')
     end
   end
+
+  def short_date(event)
+    start_date = Time.parse(event.start_date)
+    start_date.strftime('%m/%d @%I:%M')
+  end
   
 	def body_attributes
     attributes = {:class => "#{body_classes.join(' ')}", :id => body_id}    
@@ -48,6 +53,7 @@ module Shovelpunks
   module Events
     def self.upcoming
       self.load_events if (@@event_cache.blank? || (self.last_update < 5.minutes.ago))
+      @@event_cache[:events][0..13]
     end
 
     def self.listings

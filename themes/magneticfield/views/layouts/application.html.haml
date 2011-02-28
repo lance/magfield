@@ -3,10 +3,11 @@
   %head
     %title= browser_title(yield(:title))
     = render :partial => 'shared/google_analytics' unless local_request?    
-    %script{ :src=>"/theme/javascripts/prototype.js", :type=>"text/javascript" }
-    %script{ :src=>"/theme/javascripts/scriptaculous.js", :type=>"text/javascript" }
-    %script{ :src=>"/theme/javascripts/application.js", :type=>"text/javascript" }
 
+    %script{ :src=>'https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js' }
+    %script{ :src=>'/theme/javascripts/facebox.js' }
+    %script{ :src=>'/theme/javascripts/site.js' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/theme/stylesheets/facebox.css', :media=>'screen, projection' }
     %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/theme/stylesheets/screen.css', :media=>'screen, projection' }
     %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'/theme/stylesheets/print.css', :media=>'print' }
     /[if lt IE 8]
@@ -47,22 +48,16 @@
         #menu
           %ul
             %li 
+              %a{:href=>'/events'} Shows
+          %ul
+            %li 
               %a{:href=>'/pages/cafe-bar'} Cafe &amp; Bar
+          %ul
             %li 
-              %a{:href=>'/pages/performance-house'} Performance House
-            %li 
-              %a{:href=>'/pages/the-magnetic-theatre'} The Magnetic Theatre
-            %li 
-              %a{:href=>'/events'} Tickets
+              %a{:href=>'/news'} Blog
           %ul.last
             %li 
-              %a{:href=>'/news'} News
-            %li 
-              %a{:href=>'/inquiries/new'} Contact
-            %li 
-              %a{:href=>'/pages/faq'} FAQ
-            %li 
-              %a{:href=>'/pages/about'} About
+              %a{:href=>'/inquiries/new'} Getting Here
         
       #content 
         = yield
