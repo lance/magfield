@@ -54,10 +54,10 @@
               %a{:href=>'/pages/cafe-bar'} Cafe &amp; Bar
           %ul
             %li 
-              %a{:href=>'/news'} Blog
+              %a{:href=>'/news'} News
           %ul.last
             %li 
-              %a{:href=>'/inquiries/new'} Getting Here
+              %a{:href=>'/inquiries/new'} Directions &amp; FAQ
         
       #content 
         = yield
@@ -71,3 +71,4 @@
           = link_to "Contact", '/inquiries/new'        
           \|
           = link_to "Privacy Policy", '/pages/privacy-policy'        
+  = render :partial => '/shared/google_analytics' unless local_request?

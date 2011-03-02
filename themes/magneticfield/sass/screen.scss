@@ -17,7 +17,8 @@ body.bp {
   h2 { font-size: 18px; }
   h3 { font-size: 16px; }
   h1, h2, h3 { 
-    text-shadow: #500 1px 1px 1px;
+    text-shadow: #000 2px 2px 3px;
+    color: $header_color;
   }
   #header { 
     margin: 10px 0;
@@ -35,8 +36,6 @@ body.bp {
     width: 920px;
     margin: auto;
     padding: 0 60px;
-    h1, h2, h3 {
-      color: $header_color; } }
     h1.page_title {
       padding: 16px;
       background-color: #012;
@@ -45,13 +44,19 @@ body.bp {
       @include drop_shadow;
       font-family: Futura Medium, Century Gothic, AppleGothic, sans-serif;
     }
+  }
+  #facebox .popup { 
+    color: #eee;
+    background-color: #ccc; 
+    .close { background-color: #333; }
+    .content { background-color: #333; } }
   #footer {
     clear: both;
     padding: 20px 0;
     #links {
       padding: 10px 40px;
-      color: #000;
-      background: #ccc; // url(/theme/images/black50.png);
+      color: #AAF;
+      background: #333; // url(/theme/images/black50.png);
       @include rounded_corners;
     }    
     text-align: center; 
@@ -98,7 +103,7 @@ body.bp {
   background: #333;
   font-face: Futura, Arial, Verdana, sans-serif;
   font-weight: bold;
-  text-transform: uppercase;
+  text-shadow: #000 3px 3px 4px;
   ul {
     padding: 0;  
     margin: 0 30px;
@@ -106,7 +111,7 @@ body.bp {
   }
   ul li {
     list-style: none;
-    font-size: 16px;
+    font-size: 18px;
     display: block;
     a {
       color: $menu_link; 
@@ -188,9 +193,9 @@ body.bp p {
 }
 
 #pages-home #body_content_left p {
-  font-size: 14px;
-  color: #000;
-  font-family: "Sansation", "Lucida Grande", "Verdana", "Arial", "Helvetica", "Gill Sans", sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  font-family: "Verdana", "Arial", "Helvetica", "Gill Sans", sans-serif;
   img {
     float: left;
     margin-right: 15px;
@@ -199,8 +204,23 @@ body.bp p {
 
 #body_content_left {
   float: left;
+  color: #fff;
   display: inline-block;
   width: 70%;
+  background-color: #333;
+  @include rounded_corners;
+  padding: 15px 10px;
+  .spotlight {
+    display: inline-block;
+    float: left;
+    padding: 10px;
+    width: 295px;
+    min-height: 120px;
+    margin-right: 10px;
+    background-color: #666;
+    @include rounded_corners;
+  }
+  .spotlight.right { margin-right: 0; }
 }
 
 #body_content_right {

@@ -1,17 +1,24 @@
-- content_for :body_content_right do
-  %h3 Upcoming Shows
-  %ul.sidebar_events
-    - Shovelpunks::Events.upcoming.each do |event|
-      %li
-        %a{:href=>"##{event.id}", :rel=>'facebox'} 
-          %b= event.title
-          &raquo;
-          = short_date event
-        %span.description{:id=>event.id, :style=>'display:none'}
-          = event.description
-          %a{:href=>event.url, :title=>"Tickets for #{event.title}"} Buy Tix &rarr;
+#body_content.clearfix
+  #body_content_left.clearfix
+    = @page[:body].html_safe
+    - if @page[:spotlight_left]
+      .spotlight.left
+        = @page[:spotlight_left] 
+    - if @page[:spotlight_right]
+      .spotlight.right
+        = @page[:spotlight_right] 
+  #body_content_right.clearfix
+    %h3 Upcoming Shows
+    %ul.sidebar_events
+      - Shovelpunks::Events.upcoming.each do |event|
+        %li
+          %a{:href=>"##{event.id}", :rel=>'facebox'} 
+            %b= event.title
+            &raquo;
+            = short_date event
+          %span.description{:id=>event.id, :style=>'display:none'}
+            = event.description
+            %a{:href=>event.url, :title=>"Tickets for #{event.title}"} Buy Tix &rarr;
+    %hr{:style=>'margin-top:30px'}
+    = @page[:side_body] if @page[:side_body]
 
-    
-
-= render :partial => "/shared/content_page", :locals => {:show_submenu => false} 
-/ 
