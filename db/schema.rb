@@ -131,15 +131,6 @@ ActiveRecord::Schema.define(:version => 20100826160951) do
     t.integer "role_id"
   end
 
-  create_table "schedules", :force => true do |t|
-    t.string   "provider"
-    t.integer  "position"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "schedules", ["id"], :name => "index_schedules_on_id"
-
   create_table "slugs", :force => true do |t|
     t.string   "name"
     t.integer  "sluggable_id"

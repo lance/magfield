@@ -81,7 +81,7 @@ body.bp {
 
 #content {
   margin-top: 20px;
-  background: #eee; // url("/theme/images/black50.png");
+  background: #666; // url("/theme/images/black50.png");
   min-height: 450px;
   padding: 15px;
   @include rounded_corners;
@@ -106,19 +106,24 @@ body.bp {
   text-shadow: #000 3px 3px 4px;
   ul {
     padding: 0;  
-    margin: 0 30px;
+    margin: 0 0 0 10px;
     float: left;
   }
   ul li {
     list-style: none;
     font-size: 18px;
     display: block;
+    border-right: #111 1px solid;
+    padding: 0 10px;
+    float: left;
+    display: inline-block;
     a {
       color: $menu_link; 
       text-decoration: none; 
       display: block; 
       padding: 0; } 
   }    
+  ul li.last { border-right: none; }
   ul li a:hover {
     color: $menu_hover; }  
 }
@@ -214,13 +219,20 @@ body.bp p {
     display: inline-block;
     float: left;
     padding: 10px;
-    width: 295px;
+    width: 275px;
     min-height: 120px;
     margin-right: 10px;
-    background-color: #666;
+    margin-bottom: 25px;
     @include rounded_corners;
+    background-color: #333;
+    border: #666 10px solid;
   }
   .spotlight.right { margin-right: 0; }
+  .spotlight.top { 
+    border: #666 10px solid;
+    margin-top: 25px;
+    width: 600px;
+  }
 }
 
 #body_content_right {
@@ -232,6 +244,22 @@ body.bp p {
   background-color: #333;
   color: #eee;
   @include rounded_corners;
+  .filter {
+    background-color: #444;
+    width: 140px;
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+    @include rounded_corners;
+  }
+  .filter.theatre { color: $theatre_color; }
+  .filter.comedy { color: $comedy_color; }
+  .filter.music { color: $music_color; }
+  .filter:hover { 
+    cursor: pointer; 
+    background-color: #555;
+  }
 }
 
 #body_content_left {
@@ -240,7 +268,7 @@ body.bp p {
 }
 
 #body_content.no_body_content_right #body_content_left {
-  width: 900px;
+  width: 870px;
 }
 
 body.bp ul#events {
@@ -283,6 +311,16 @@ body.bp ul#events {
       padding-top: 10px;
       margin-top: 4px;
     }
+    .tag_marker {
+      width: 20px;
+      height: 20px;
+      float: left;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .tag_marker.theatre { background-color: $theatre_color; }
+    .tag_marker.comedy { background-color: $comedy_color; }
+    .tag_marker.music { background-color: $music_color; }
     .tickets {
       float:right;
       margin-top:-20px;
@@ -438,4 +476,5 @@ body.bp {
       a { color: white; text-decoration: none; }
     }
   }
+  .side_body p { font-size: 11px; }
 }

@@ -1,6 +1,9 @@
 #body_content.clearfix
   #body_content_left.clearfix
     = @page[:body].html_safe
+    - if @page[:spotlight_top]
+      .spotlight.top
+        = @page[:spotlight_top]
     - if @page[:spotlight_left]
       .spotlight.left
         = @page[:spotlight_left] 
@@ -20,5 +23,6 @@
             = event.description
             %a{:href=>event.url, :title=>"Tickets for #{event.title}"} Buy Tix &rarr;
     %hr{:style=>'margin-top:30px'}
-    = @page[:side_body] if @page[:side_body]
+    - if @page[:side_body]
+      .side_body= @page[:side_body] 
 
