@@ -4,8 +4,9 @@
     - @events.each do |event|
       - event.tags = 'music' if event.title == "Synergy Story Slam"
       - event.tags = 'theatre' if event.title == "Ruth"
-      - event.tags = 'comedy' if event.tags.blank?
-      %li{:class=>"event #{cycle('even', 'odd')}"}
+      - event.tags = 'comedy' if event.title == "The Labyrinth"
+      - event.tags = 'other' if event.title == "The Songs of Robert"
+      %li{:class=>"event #{event.tags} #{cycle('even', 'odd')}"}
         - unless event.tags.blank?
           %span.tag_marker{:class=>event.tags} &nbsp;
         %span.title
@@ -23,11 +24,13 @@
 
         
 - content_for :body_content_right do
-  .filter.theatre theatre
-  .filter.comedy comedy
-  .filter.music music
-  - if @page[:side_body]
-    %hr
-    .side_body= @page[:side_body] 
+  #filters
+    .filter.theatre.active{:rel=>'theatre'} theatre
+    .filter.comedy.active{:rel=>'comedy'} comedy
+    .filter.music.active{:rel=>'music'} music
+    .filter.other.active{:rel=>'other'} etcetera
+    - if @page[:side_body]
+      %hr
+      .side_body= @page[:side_body] 
 
 = render :partial => "/shared/content_page"

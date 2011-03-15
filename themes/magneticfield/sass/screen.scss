@@ -244,22 +244,41 @@ body.bp p {
   background-color: #333;
   color: #eee;
   @include rounded_corners;
+
   .filter {
-    background-color: #444;
     width: 140px;
     padding: 20px;
     font-size: 24px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     @include rounded_corners;
   }
-  .filter.theatre { color: $theatre_color; }
-  .filter.comedy { color: $comedy_color; }
-  .filter.music { color: $music_color; }
-  .filter:hover { 
-    cursor: pointer; 
-    background-color: #555;
-  }
+
+  .filter.theatre { color: $theatre_color - 50; }
+  .filter.comedy { color: $comedy_color - 50; }
+  .filter.music { color: $music_color - 50; }
+  .filter.other { color: $other_color - 50; }
+  .filter.theatre:hover { color: $theatre_color; }
+  .filter.comedy:hover { color: $comedy_color; }
+  .filter.music:hover { color: $music_color; }
+  .filter.other:hover { color: $other_color; }
+
+  .filter { background-color: #444; }
+  .filter:hover { cursor: pointer; background-color: #555; }
+
+  .filter.active.theatre { color: $theatre_color; }
+  .filter.active.comedy { color: $comedy_color; }
+  .filter.active.music { color: $music_color; }
+  .filter.active.other { color: $other_color; }
+
+  .filter.active { background-color: #555; }
+
+  .filter.active:hover { background-color: #444; cursor: pointer; }
+  .filter.active.theatre:hover { color: $theatre_color - 50; }
+  .filter.active.comedy:hover { color: $comedy_color - 50; }
+  .filter.active.music:hover { color: $music_color - 50; }
+  .filter.active.other:hover { color: $other_color - 50; }
+
 }
 
 #body_content_left {
@@ -312,15 +331,17 @@ body.bp ul#events {
       margin-top: 4px;
     }
     .tag_marker {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       float: left;
       display: inline-block;
       margin-right: 10px;
+      @include rounded_corners;
     }
     .tag_marker.theatre { background-color: $theatre_color; }
     .tag_marker.comedy { background-color: $comedy_color; }
     .tag_marker.music { background-color: $music_color; }
+    .tag_marker.other { background-color: $other_color; }
     .tickets {
       float:right;
       margin-top:-20px;
