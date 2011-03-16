@@ -11,6 +11,10 @@
       .spotlight.right
         = @page[:spotlight_right] 
   #body_content_right.clearfix
+    %h1 The Magnetic Theatre
+    %p
+      %a{:href=>'/pages/the-magnetic-theatre'} The Magnetic Theatre 
+      in The Magnetic Field presents theatre, music, comedy, and spoken word evenings throughout the week.
     %h3 Upcoming Shows
     %ul.sidebar_events
       - Shovelpunks::Events.upcoming.each do |event|
