@@ -2,11 +2,8 @@
   %h1 Shows at the Field
   %ul#events
     - @events.each do |event|
-      - event.tags = 'music' if event.title == "Synergy Story Slam"
-      - event.tags = 'theatre' if event.title == "Ruth"
-      - event.tags = 'comedy' if event.title == "The Labyrinth"
-      - event.tags = 'other' if event.title == "The Songs of Robert"
-      %li{:class=>"event #{event.tags} #{cycle('even', 'odd')}"}
+      - event.tags = 'other' if event.tags.blank?
+      %li{:class=>"event all #{event.tags} #{cycle('even', 'odd')}"}
         - unless event.tags.blank?
           %span.tag_marker{:class=>event.tags} &nbsp;
         %span.title
@@ -25,10 +22,11 @@
         
 - content_for :body_content_right do
   #filters
-    .filter.theatre.active{:rel=>'theatre'} theatre
-    .filter.comedy.active{:rel=>'comedy'} comedy
-    .filter.music.active{:rel=>'music'} music
-    .filter.other.active{:rel=>'other'} etcetera
+    .filter.theatre{:rel=>'theatre'} theatre
+    .filter.comedy{:rel=>'comedy'} comedy
+    .filter.music{:rel=>'music'} music
+    .filter.other{:rel=>'other'} etcetera
+    .filter.all{:rel=>'all'} everything
     - if @page[:side_body]
       %hr
       .side_body= @page[:side_body] 

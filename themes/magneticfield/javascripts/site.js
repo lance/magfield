@@ -11,6 +11,8 @@ $(document).ready(function($) {
 
   $('#filters .filter').bind('click', function() {
     $(this).toggleClass('active')
+    $(this).siblings().removeClass('active')
+    $('#events .event').hide()
     $('#events .event.'+$(this).attr('rel')).toggle()
   })
 

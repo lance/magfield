@@ -251,33 +251,34 @@ body.bp p {
     font-size: 24px;
     text-align: center;
     margin-bottom: 10px;
+    background-color: #444;
     @include rounded_corners;
   }
+  .filter:hover { cursor: pointer; background-color: #222; }
 
-  .filter.theatre { color: $theatre_color - 50; }
-  .filter.comedy { color: $comedy_color - 50; }
-  .filter.music { color: $music_color - 50; }
-  .filter.other { color: $other_color - 50; }
-  .filter.theatre:hover { color: $theatre_color; }
-  .filter.comedy:hover { color: $comedy_color; }
-  .filter.music:hover { color: $music_color; }
-  .filter.other:hover { color: $other_color; }
+  .filter.theatre { color: $theatre_color; }
+  .filter.comedy { color: $comedy_color; }
+  .filter.music { color: $music_color; }
+  .filter.other { color: $other_color; }
 
-  .filter { background-color: #444; }
-  .filter:hover { cursor: pointer; background-color: #555; }
+  .filter.active:hover { background-color: #444; }
+  .filter.theatre:hover { color: $theatre_color - 50; }
+  .filter.comedy:hover { color: $comedy_color - 50; }
+  .filter.music:hover { color: $music_color - 50; }
+  .filter.other:hover { color: $other_color - 50; }
 
-  .filter.active.theatre { color: $theatre_color; }
-  .filter.active.comedy { color: $comedy_color; }
-  .filter.active.music { color: $music_color; }
-  .filter.active.other { color: $other_color; }
+  .filter.active { background-color: #222; }
 
-  .filter.active { background-color: #555; }
+  .filter.active.theatre { color: $theatre_color - 50; }
+  .filter.active.comedy { color: $comedy_color - 50; }
+  .filter.active.music { color: $music_color - 50; }
+  .filter.active.other { color: $other_color - 50; }
 
-  .filter.active:hover { background-color: #444; cursor: pointer; }
-  .filter.active.theatre:hover { color: $theatre_color - 50; }
-  .filter.active.comedy:hover { color: $comedy_color - 50; }
-  .filter.active.music:hover { color: $music_color - 50; }
-  .filter.active.other:hover { color: $other_color - 50; }
+  .filter.active.theatre:hover { color: $theatre_color; }
+  .filter.active.comedy:hover { color: $comedy_color; }
+  .filter.active.music:hover { color: $music_color; }
+  .filter.oactive.ther:hover { color: $other_color; }
+
 
 }
 
@@ -287,6 +288,7 @@ body.bp p {
 }
 
 #body_content.no_body_content_right #body_content_left {
+
   width: 870px;
 }
 
