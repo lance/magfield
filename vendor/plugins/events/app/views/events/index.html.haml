@@ -7,8 +7,8 @@
         - unless event.tags.blank?
           %span.tag_marker{:class=>event.tags} &nbsp;
         %span.title
-          = event.title
-          &rarr;
+          = truncate(event.title, :length=>45)
+          &rarr; 
           = format_event_date event
         %span.tickets
           &rarr;
@@ -25,7 +25,7 @@
     .filter.theatre{:rel=>'theatre'} theatre
     .filter.comedy{:rel=>'comedy'} comedy
     .filter.music{:rel=>'music'} music
-    .filter.other{:rel=>'other'} etcetera
+    .filter.other{:rel=>'other'} other events
     .filter.active.all{:rel=>'all'} everything
     - if @page[:side_body]
       %hr

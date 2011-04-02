@@ -214,6 +214,8 @@ body.bp p {
   width: 70%;
   background-color: #333;
   @include rounded_corners;
+  margin-right: 10px;
+  width: 640px;
   padding: 15px 10px;
   .spotlight {
     display: inline-block;
@@ -238,9 +240,9 @@ body.bp p {
 #body_content_right {
   float: left;
   display: inline-block;
-  margin-left: 10px;
-  padding: 10px;
-  width: 180px;
+  margin-left: 0px;
+  padding: 10px 5px 10px 10px;
+  width: 205px;
   background-color: #333;
   color: #eee;
   @include rounded_corners;
@@ -280,11 +282,6 @@ body.bp p {
   .filter.oactive.ther:hover { color: $other_color; }
 
 
-}
-
-#body_content_left {
-  width: 640px;
-  margin-right: 20px;
 }
 
 #body_content.no_body_content_right #body_content_left {
@@ -446,12 +443,12 @@ body.bp #event_gallery {
 }
 
 body.bp #body_content_right {
-  h1 { font-size: 16px; }
-  h2 { font-size: 14px; }
-  h3 { font-size: 13px; }
-  h4 { font-size: 12px; }
-  h5 { font-size: 11px; }
-  h6 { font-size: 10px; }
+  h1 { font-size: 18px; }
+  h2 { font-size: 16px; }
+  h3 { font-size: 15px; }
+  h4 { font-size: 14px; }
+  h5 { font-size: 13px; }
+  h6 { font-size: 12px; }
   h1,h2,h3,h4,h5,h6 { font-weight:bold; }
   margin-bottom: 40px;
 }
@@ -496,8 +493,18 @@ body.bp {
       padding-bottom: 4px;
       border-bottom: #ccc 1px dotted;
       line-height: 14px;
+      font-size: 14px;
       a { color: white; text-decoration: none; }
+      .event_date {
+        font-size: 12px;
+      }
+      .event_title {
+        display: block;
+      }
+      .event_title:hover {
+        color: $header_color;
+      }
     }
   }
-  .side_body p { font-size: 11px; }
+  .side_body p { font-size: 12px; }
 }

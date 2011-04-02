@@ -10,6 +10,7 @@
     - if @page[:spotlight_right]
       .spotlight.right
         = @page[:spotlight_right] 
+
   #body_content_right.clearfix
     %h1 The Magnetic Theatre
     %p
@@ -20,9 +21,8 @@
       - Shovelpunks::Events.upcoming.each do |event|
         %li
           %a{:href=>"##{event.id}", :rel=>'facebox'} 
-            %b= event.title
-            &raquo;
-            = short_date event
+            %span.event_title= event.title
+            %span.event_date= short_date event
           %span.description{:id=>event.id, :style=>'display:none'}
             = event.description
             %a{:href=>event.url, :title=>"Tickets for #{event.title}"} Buy Tix &rarr;
