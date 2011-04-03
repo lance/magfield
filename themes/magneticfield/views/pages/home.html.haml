@@ -21,7 +21,8 @@
       - Shovelpunks::Events.upcoming.each do |event|
         %li
           %a{:href=>"##{event.id}", :rel=>'facebox'} 
-            %span.event_title= event.title
+            %span.event_title= truncate(event.title, :length=>30)
+            &raquo;
             %span.event_date= short_date event
           %span.description{:id=>event.id, :style=>'display:none'}
             = event.description
