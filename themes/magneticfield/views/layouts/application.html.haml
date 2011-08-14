@@ -39,12 +39,6 @@
       #header
         #logo
           =link_to image_tag('/theme/images/logo1.png'), '/'
-        - if RefinerySetting.find_or_set(:show_social_media, false)
-          #social_media
-            #facebook
-              = link_to image_tag('/theme/images/facebook.png', :alt=>'Like us on Facebook'), "http://facebook.com/#{RefinerySetting.find_or_set(:facebook_page, false)}"
-            #twitter
-              = link_to image_tag('/theme/images/twitter.png', :alt=>'Follow us on Twitter'), "http://twitter.com/#{RefinerySetting.find_or_set(:twitter_id, false)}"
         #menu
           %ul
             %li 
@@ -55,8 +49,19 @@
               %a{:href=>'/news'} News
             %li 
               %a{:href=>'/inquiries/new'} Contact Us
-            %li.last
+            %li
               %a{:href=>'/faq'} Directions &amp; FAQ
+            %li
+              %a{:href=>'/pages/about'} About Us
+            %li.last
+              %a{:href=>'/pages/the-magnetic-theatre'} The Magnetic Theatre
+        - if RefinerySetting.find_or_set(:show_social_media, false)
+          #social_media
+            #facebook
+              = link_to image_tag('/theme/images/facebook.png', :alt=>'Like us on Facebook'), "http://facebook.com/#{RefinerySetting.find_or_set(:facebook_page, false)}"
+            #twitter
+              = link_to image_tag('/theme/images/twitter.png', :alt=>'Follow us on Twitter'), "http://twitter.com/#{RefinerySetting.find_or_set(:twitter_id, false)}"
+
         
       #content 
         = yield

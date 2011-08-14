@@ -727,7 +727,7 @@ body.bp #footer #links {
 /* line 96, ../sass/screen.scss */
 #menu, #social_media {
   float: right;
-  margin: 60px 0 0 0;
+  margin: 10px 0 0 0;
   -moz-box-shadow: 5px 2px 2px #222222;
   box-shadow: 5px 2px 2px #222222;
   -webkit-box-shadow: 5px 2px 2px #222222;
@@ -750,7 +750,7 @@ body.bp #footer #links {
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   float: right;
-  padding: 10px 20px;
+  padding: 10px;
   background: #333;
   font-face: Futura, Arial, Verdana, sans-serif;
   font-weight: bold;
@@ -765,7 +765,7 @@ body.bp #footer #links {
 /* line 116, ../sass/screen.scss */
 #menu ul li {
   list-style: none;
-  font-size: 18px;
+  font-size: 14px;
   display: block;
   border-right: #111 1px solid;
   padding: 0 10px;
